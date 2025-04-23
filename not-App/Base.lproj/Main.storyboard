@@ -53,7 +53,7 @@
                                         <rect key="frame" x="0.0" y="105.66666666666666" width="361" height="33"/>
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="go"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kMX-ZZ-GQ9">
                                         <rect key="frame" x="0.0" y="158.66666666666669" width="361" height="32.666666666666657"/>
@@ -65,7 +65,7 @@
                                         <rect key="frame" x="0.0" y="211.33333333333331" width="361" height="33"/>
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lb8-7b-P7E">
                                         <rect key="frame" x="0.0" y="264.33333333333331" width="361" height="32.666666666666686"/>
@@ -104,6 +104,7 @@
                     <navigationItem key="navigationItem" id="XVo-4Y-XT5"/>
                     <connections>
                         <outlet property="emailTextField" destination="ROU-Hl-tNv" id="ayD-uf-LVz"/>
+                        <outlet property="loginButtonOutlet" destination="Lb8-7b-P7E" id="kN5-kO-O7l"/>
                         <outlet property="passwordTextField" destination="mO2-hP-T2s" id="ZMl-w6-raL"/>
                         <segue destination="1uS-ne-xeO" kind="show" identifier="LoginToRegister" id="VP4-bq-Z4L"/>
                         <segue destination="OR2-2L-pkx" kind="show" identifier="LoginToNotes" id="CBj-WM-Mai"/>
@@ -188,7 +189,7 @@
             <objects>
                 <viewController id="aDJ-eT-wat" customClass="NewNotViewController" customModule="not_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hfL-Lr-3UE">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="8HG-SN-Mce">
@@ -204,7 +205,7 @@
                                         <rect key="frame" x="0.0" y="74" width="361" height="54"/>
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="go"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="içerik" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yj4-R1-EZM">
                                         <rect key="frame" x="0.0" y="148" width="361" height="54"/>
@@ -217,7 +218,7 @@
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="go"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="705-Jr-4h6">
                                         <rect key="frame" x="0.0" y="296" width="361" height="54"/>
@@ -258,7 +259,7 @@
             <objects>
                 <viewController id="55j-f2-yvA" customClass="EditViewController" customModule="not_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="juC-4s-oHo">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="0uH-kQ-ok5">
@@ -274,7 +275,7 @@
                                         <rect key="frame" x="0.0" y="61.666666666666657" width="361" height="41.666666666666657"/>
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="go"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="içerik" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5A-bj-gOm">
                                         <rect key="frame" x="0.0" y="123.33333333333333" width="361" height="41.666666666666671"/>
@@ -287,7 +288,7 @@
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="go"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kbW-Z6-ojd">
                                         <rect key="frame" x="0.0" y="246.66666666666666" width="361" height="41.666666666666657"/>
@@ -360,7 +361,7 @@
                                         <rect key="frame" x="0.0" y="105.66666666666666" width="361" height="33"/>
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="go"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQ1-jR-Ac9">
                                         <rect key="frame" x="0.0" y="158.66666666666669" width="361" height="32.666666666666657"/>
@@ -372,7 +373,7 @@
                                         <rect key="frame" x="0.0" y="211.33333333333331" width="361" height="33"/>
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES" textContentType="one-time-code"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qmb-Mn-4AL">
                                         <rect key="frame" x="0.0" y="264.33333333333331" width="361" height="32.666666666666686"/>
@@ -412,6 +413,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="kHE-7V-8nd" id="gBc-ph-qHW"/>
                         <outlet property="passwordTextField" destination="dis-vB-Eas" id="Rma-6v-XJc"/>
+                        <outlet property="registerButtonOutlet" destination="Qmb-Mn-4AL" id="eTU-K3-JlY"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="RegisterToLogin" id="joR-qe-1z9"/>
                         <segue destination="OR2-2L-pkx" kind="show" identifier="RegisterToNotes" id="CTf-YF-YHM"/>
                     </connections>
@@ -422,8 +424,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="VP4-bq-Z4L"/>
         <segue reference="CBj-WM-Mai"/>
-        <segue reference="9IF-Kf-ozZ"/>
+        <segue reference="joR-qe-1z9"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">

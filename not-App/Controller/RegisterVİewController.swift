@@ -5,9 +5,12 @@ class RegisterViewController: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-
+    @IBOutlet weak var registerButtonOutlet: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
     }
 
     @IBAction func registerButtonTapped(_ sender: UIButton) {
@@ -34,4 +37,15 @@ class RegisterViewController: UIViewController {
 
     }
     
+}
+
+extension RegisterViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == emailTextField {
+            passwordTextField.becomeFirstResponder()
+        } else if textField == passwordTextField {
+            registerButtonTapped(registerButtonOutlet) // ENTER tuşu bu fonksiyonu tetikler
+        }
+        return true
+    }
 }

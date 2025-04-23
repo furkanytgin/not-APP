@@ -18,7 +18,7 @@ class EditViewController: UIViewController {
     override func viewDidLoad() {
         title = "Düzenle yada Sil"
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
         if let note = note {
             titleTextField.text = note.title
             contentTextView.text = note.content
@@ -42,7 +42,7 @@ class EditViewController: UIViewController {
                    return
                }
                
-               // Firestore'da notu güncelleme
+               // Firestore da notu güncelleme
                let db = Firestore.firestore()
                
                db.collection("notes").document(note.id).updateData([
@@ -67,7 +67,7 @@ class EditViewController: UIViewController {
 
                let db = Firestore.firestore()
                
-               // Firestore'dan notu silme
+               // Firestore dan notu silme
                db.collection("notes").document(note.id).delete { error in
                    if let error = error {
                        print("Not silme hatası: \(error.localizedDescription)")

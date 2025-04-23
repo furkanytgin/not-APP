@@ -27,7 +27,7 @@ class NotsViewController : UIViewController,UITableViewDelegate, UITableViewData
         title = "Notlar Listesi"
         
         if Auth.auth().currentUser == nil {
-            // storyboard'daki Login ViewController'a geçiş yap
+            // storyboard daki Login ViewControllera geçiş yap
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginVC")
             present(loginVC, animated: true, completion: nil)
@@ -46,7 +46,7 @@ class NotsViewController : UIViewController,UITableViewDelegate, UITableViewData
                 if let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate {
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginVC")
-                    let navVC = UINavigationController(rootViewController: loginVC) // navigation bar'lı olsun diye
+                    let navVC = UINavigationController(rootViewController: loginVC) // navigation barlı olsun diye
                     
                     sceneDelegate.window?.rootViewController = navVC
                     sceneDelegate.window?.makeKeyAndVisible()
@@ -80,12 +80,12 @@ class NotsViewController : UIViewController,UITableViewDelegate, UITableViewData
             }
         }
 
-        // TableView'da kaç satır olduğunu belirtme
+        // TableViewda kaç satır olduğunu belirtme
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             return notes.count
         }
         
-        // TableView'da her hücreyi oluşturma
+        // TableViewda her hücreyi oluşturma
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: "NoteCell", for: indexPath)
             let note = notes[indexPath.row]

@@ -6,7 +6,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
 
+    @IBOutlet weak var loginButtonOutlet: UIButton!
     override func viewDidLoad() {
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
         super.viewDidLoad()
     }
 
@@ -31,5 +34,17 @@ class ViewController: UIViewController {
     @IBAction func goToRegisterButtonTapped(_ sender: UIButton) {
         // Register ekranına geç
         performSegue(withIdentifier: "LoginToRegister", sender: self)
+    }
+}
+
+
+extension ViewController: UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == emailTextField {
+            passwordTextField.becomeFirstResponder()
+        } else if textField == passwordTextField {
+            loginButtonTapped(loginButtonOutlet) 
+        }
+        return true
     }
 }
