@@ -15,6 +15,7 @@ class EditViewController: UIViewController {
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var contentTextView: UITextView!
     
+    @IBOutlet weak var loadingIcon: UIActivityIndicatorView!
     override func viewDidLoad() {
         title = "Düzenle yada Sil"
         super.viewDidLoad()
@@ -32,7 +33,7 @@ class EditViewController: UIViewController {
                    print("Not bulunamadı.")
                    return
                }
-               
+        loadingIcon.startAnimating()
                // Güncelleme işlemi
                let updatedTitle = titleTextField.text ?? ""
                let updatedContent = contentTextView.text ?? ""
@@ -54,6 +55,7 @@ class EditViewController: UIViewController {
                    } else {
                        print("Not başarıyla güncellendi.")
                        // Güncelleme başarılı olduğunda geri dön
+                       self.loadingIcon.stopAnimating()
                        self.navigationController?.popViewController(animated: true)
                    }
                }
@@ -66,7 +68,7 @@ class EditViewController: UIViewController {
                }
 
                let db = Firestore.firestore()
-               
+        loadingIcon.startAnimating()
                // Firestore dan notu silme
                db.collection("notes").document(note.id).delete { error in
                    if let error = error {
@@ -75,6 +77,7 @@ class EditViewController: UIViewController {
                        print("Not başarıyla silindi.")
                        // Silme işleminden sonra notlar sayfasına dön
                        self.navigationController?.popViewController(animated: true)
+                       self.loadingIcon.stopAnimating()
                    }
                }
     }

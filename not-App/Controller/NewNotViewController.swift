@@ -14,6 +14,7 @@ class NewNotViewController: UIViewController {
     @IBOutlet weak var contentTextView: UITextView!
     @IBOutlet weak var titleTextField: UITextField!
     
+    @IBOutlet weak var loadingIcon: UIActivityIndicatorView!
     let db = Firestore.firestore()
     
     override func viewDidLoad() {
@@ -29,7 +30,7 @@ class NewNotViewController: UIViewController {
             print("Eksik alan var veya kullanıcı oturumu yok.")
             return
         }
-        
+        loadingIcon.startAnimating()
         let noteData: [String: Any] = [
             "title": title,
             "content": content,
@@ -39,9 +40,11 @@ class NewNotViewController: UIViewController {
         
         db.collection("notes").addDocument(data: noteData) { error in
             if let error = error {
+                self.loadingIcon.stopAnimating()
                 print("Not kaydedilemedi: \(error.localizedDescription)")
             } else {
                 print("Not başarıyla kaydedildi.")
+                self.loadingIcon.stopAnimating()
                 self.navigationController?.popViewController(animated: true)
             }
         }
